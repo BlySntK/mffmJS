@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>My Fucking Favourite Meteor JS</title>
+		<script type="text/javascript" src="CreateJS/dist/createjs.min.js"></script>
+	</head>
+	
+	<body onload="ignition();">
+		<canvas id="init"></canvas>
+		<script type="text/javascript">
+			var stage;
+			var hw;
+			var dimensions;
+			
+			function ignition() {
+				stage = new createjs.Stage("init");
+				hw = new createjs.Text("Tu puta madre", "30px Times Roman", "green");
+				hw.textBaseLine = "alphabetic";
+				dimensions = hw.getBounds();
+
+				hw.x = stage.canvas.width / 2 - dimensions.width / 2;
+				hw.y = stage.canvas.height / 2 - dimensions.height / 2;
+				hw.addEventListener("click", onBallClicked);
+
+				stage.addChild(hw);
+				stage.update();
+			}
+
+			function onBallClicked(event) {
+				alert("Hijo de puta, no me acoses!");
+			}
+		</script>
+	</body>
+</html>
